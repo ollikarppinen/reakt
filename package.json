@@ -14,5 +14,8 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/react": "^17.0.39",
+    "add": "^2.0.6"
+  }
 }

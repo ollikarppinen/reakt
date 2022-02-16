@@ -2,7 +2,13 @@ import Reakt from '../src/Reakt'
 const React = Reakt
 
 const names = ['foo', 'bar', 'baz']
-const NameList = () => (<ul>{names.map((name: any) => (<li>{name}</li>))</ul>)
+const NameList = (): any => (
+  <ul>
+    {names.map((name: any) => (
+      <li>{name}</li>
+    ))}
+  </ul>
+)
 const App = (props: any) => (
   <div>
     <h1>Hi {props.name}</h1>
