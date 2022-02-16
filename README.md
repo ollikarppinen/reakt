@@ -2,8 +2,6 @@
 
 A (very) basic React re-implementation.
 
-Build the bundle with: `npm run build`
-
-Serve the files with `http-server -a localhost -p 80 `
-
-https://www.npmjs.com/package/http-server
+1. Build the bundle with: `npm run build`
+2. Install serve with `npm i -g serve`
+3. Serve the files with `serve -s -l 3000 dist`
