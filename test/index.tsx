@@ -1,7 +1,7 @@
 import Reakt from '../src/Reakt'
 const React = Reakt
 
-const names = ['foo', 'bar', 'baz']
+const names = ['foo', 'bar', 'baz', 'qux']
 const NameList = (): any => (
   <ul>
     {names.map((name: any) => (
