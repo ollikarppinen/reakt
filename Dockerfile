@@ -2,11 +2,11 @@ FROM node:16-alpine as build-stage
 
 WORKDIR /usr/app
 
-COPY package* .
+COPY package* ./
 
 RUN npm ci
 
-COPY . .
+COPY . ./
 
 RUN npm run build
 
