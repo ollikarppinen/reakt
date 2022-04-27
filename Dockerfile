@@ -10,12 +10,14 @@ COPY . ./
 
 RUN npm run build
 
-FROM node:16-alpine
-
-ENV PORT 80
-
-RUN npm install -g serve
+FROM alpine:3.13.2
 
 COPY --from=build-stage /usr/app/dist /usr/app/dist
 
-CMD serve -l $PORT /usr/app/dist
+WORKDIR /usr/app/dist
+
+RUN apk --no-cache add thttpd \
+  && adduser -D static \
+  && chmod a+x /usr/app/dist
+
+CMD ["thttpd", "-D", "-h", "0.0.0.0", "-p", "80", "-d", "/usr/app/dist", "-u", "static", "-l", "-", "-M", "60"]
